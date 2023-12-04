@@ -15,6 +15,7 @@ job('build-push-docker') {
         dockerBuildAndPublish {
             repositoryName('my-app-jenkins')
             tag('6.5')
+            dockerRegistryURL('http://localhost:5000/')
             registryCredentials('local-registry')
             forcePull(false)
             forceTag(false)
