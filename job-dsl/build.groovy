@@ -8,7 +8,7 @@ job('job1') {
         }
     }
     triggers {
-        scm('*/5 * * * *')
+        scm('H/5 * * * *')
     }
     steps {
         shell("echo from job created with jobe dsl")
