@@ -1,1 +1,1 @@
-print('hello from jenkins ci/ci this me in gitlab')
+print('hello from jenkins feature branch ci/ci this me in gitlab')
