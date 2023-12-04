@@ -1,18 +1,16 @@
 job('job1') {
     scm {
-        git('https://github.com/wardviaene/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
-            node / gitConfigName('DSL User')
-            node / gitConfigEmail('jenkins-dsl@newtech.academy')
+        git {
+            branch ('main')
+            remote {
+                url ('https://github.com/mamad-n/jenkins.git')
+            }
         }
     }
     triggers {
-        scm('H/5 * * * *')
-    }
-    wrappers {
-        nodejs('nodejs') // this is the name of the NodeJS installation in 
-                         // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
+        scm('*/5 * * * *')
     }
     steps {
-        shell("npm install")
+        shell("echo from job created with jobe dsl")
     }
 }
