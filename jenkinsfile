@@ -2,19 +2,19 @@ pipeline{
     agent any
     stages {
         stage ('test') {
-            step {
+            steps {
                 echo "hello from stage test station"
                 sh "echo salam az test stage > file1"
             }
         }
         stage ('build') {
-            step {
+            steps {
                 echo "hello from stage build station"
                 sh "cat file1"
             }
         }
         stage ('deploy') {
-            step {
+            steps {
                 echo "hello from stage deploy station"
                 sh "cat file1"
             }
