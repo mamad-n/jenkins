@@ -1,13 +1,24 @@
-node {
-    stage ('test'){
-        sh "echo hello from test stage"
+pipeline{
+    agent any
+    stages {
+        stage ('test') {
+            step {
+                echo "hello from stage test station"
+                sh "echo salam az test stage > file1"
+            }
+        }
+        stage ('build') {
+            step {
+                echo "hello from stage build station"
+                sh "cat file1"
+            }
+        }
+        stage ('deploy') {
+            step {
+                echo "hello from stage deploy station"
+                sh "cat file1"
+            }
+        }
     }
 
-    stage ('build'){
-        sh "echo hello from build stage"
-    }
-
-    stage ('deploy'){
-        sh "echo hello from deploy stage"
-    }
 }
