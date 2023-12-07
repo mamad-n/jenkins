@@ -5,12 +5,14 @@ pipeline{
             steps {
                 echo "hello from stage test station"
                 sh "echo salam az test stage > file1"
+                sh "echo your buil number is : $env.BUILD_NUMBER"
             }
         }
         stage ('build') {
             steps {
                 echo "hello from stage build station"
                 sh "cat file1"
+                echo your buil number is : $currentBuild.number
             }
         }
         stage ('deploy') {
