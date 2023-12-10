@@ -5,7 +5,7 @@ pipeline{
             steps {
                 echo "hello from stage test station"
                 sh "echo salam az test stage > file1"
-                sh "mkdir my-folder"
+                sh "mkdir my-folder || true "
                 sh "cd my-folder && tar -cvf myachrive.tar ../file1"
                 sh "echo your buil number is : ${env.BUILD_NUMBER}"
                 archiveArtifacts artifacts: '**/my-folder/*.tar , file1'
