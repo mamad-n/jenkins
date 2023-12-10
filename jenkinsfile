@@ -8,7 +8,8 @@ pipeline{
                 sh "mkdir my-folder || true "
                 sh "cd my-folder && tar -cvf myachrive.tar ../file1"
                 sh "wrong-command your buil number is : ${env.BUILD_NUMBER}"
-                archiveArtifacts artifacts: 'my-folder/*.tar , file1'
+                archiveArtifacts artifacts: 'my-folder/*.tar , file1',
+                                 onlyIfSuccessful: false
                 sh "cd .. && rm -rf my-folder"
             }
         }
