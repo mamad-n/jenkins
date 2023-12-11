@@ -2,6 +2,7 @@ pipeline{
     agent any
     environment{
         my_repo_cred = credentials('registry_cred') 
+        ssh_cred = credentials('ssh_key') 
     }
     stages {
         stage ('test') {
@@ -15,6 +16,8 @@ pipeline{
                 sh "echo 'full --> $my_repo_cred'"
                 sh "echo 'username --> $my_repo_cred_USR'"
                 sh "echo 'password --> $my_repo_cred'"
+                sh "echo 'ssh ---> $ssh_cred'"
+
             }
         }
         stage ('build') {
