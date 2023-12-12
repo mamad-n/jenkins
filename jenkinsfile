@@ -14,6 +14,7 @@ pipeline{
                 // sh "cd my-folder && tar -cvf myachrive.tar ../file1"
                 sh "echo  your buil number is : ${env.BUILD_NUMBER}"
                 echo 'your name is : ${name}'
+                echo "your name is : ${name}"
                 // sh "cd .. && rm -rf my-folder"
                 // sh "echo 'full --> $my_repo_cred'"
                 // sh "echo 'username --> $my_repo_cred_USR'"
