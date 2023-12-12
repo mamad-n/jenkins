@@ -3,11 +3,11 @@ pipeline{
     environment{
         my_repo_cred = credentials('registry_cred') 
         ssh_cred = credentials('ssh-key') 
+        name = 'mamad'
     }
     stages {
         stage ('test') {
             steps {
-                def name = 'mamad'
                 echo "hello from stage test station"
                 // sh "echo salam az test stage ast > file1"
                 // sh "mkdir my-folder || true "
