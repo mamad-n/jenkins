@@ -27,7 +27,7 @@ pipeline{
                 echo "your buil number is : $currentBuild.number"
                 echo "this is ------> ${tool name: 'my-docker', type: 'dockerTool'}"
                 sh "echo $PATH"
-                sh 'ssh -o StrictHostKeyChecking=no -i $ssh_cred vagrant@192.168.44.10 "ls -lha ."'
+                // sh 'ssh -o StrictHostKeyChecking=no -i $ssh_cred vagrant@192.168.44.10 "ls -lha ."'
             }
         }
         stage ('deploy') {
