@@ -14,9 +14,9 @@ pipeline{
                 sh "echo  your buil number is : ${env.BUILD_NUMBER}"
                 sh "cd .. && rm -rf my-folder"
                 sh "echo 'full --> $my_repo_cred'"
-                sh "echo 'username --> $my_repo_cred_USR'"
-                sh "echo 'password --> $my_repo_cred'"
-                sh "echo 'ssh ---> $ssh_cred'"
+                sh "echo username --> $my_repo_cred_USR"
+                sh "echo password --> $my_repo_cred"
+                sh "echo ssh ---> $ssh_cred"
 
             }
         }
