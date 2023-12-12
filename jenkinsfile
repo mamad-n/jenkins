@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         my_repo_cred = credentials('registry_cred') 
-        ssh_cred = credentials('ssh_key') 
+        ssh_cred = credentials('ssh-key') 
     }
     stages {
         stage ('test') {
