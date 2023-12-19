@@ -5,6 +5,9 @@ pipeline{
         ssh_cred = credentials('ssh-key') 
         name = 'mamad'
     }
+    triggers {
+        cron '* * * * *'
+    }
     stages {
         stage ('test') {
             steps {
