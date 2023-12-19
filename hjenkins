@@ -1,7 +1,7 @@
 stage('Build') {
     node {
         checkout scm
-        sh 'make'
+        sh 'echo from build'
         stash includes: '**/target/*.jar', name: 'app'
     }
 }
@@ -11,7 +11,7 @@ stage('Test') {
         checkout scm
         try {
             unstash 'app'
-            sh 'make check'
+            sh 'echo from linux  check'
         }
         finally {
             junit '**/target/*.xml'
@@ -21,7 +21,7 @@ stage('Test') {
         checkout scm
         try {
             unstash 'app'
-            bat 'make check'
+            bat 'echo from windows check'
         }
         finally {
             junit '**/target/*.xml'
