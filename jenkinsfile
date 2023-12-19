@@ -20,6 +20,7 @@ pipeline{
                 echo "your name is : ${name}"
                 sh 'echo "your name is : ${name}"'
                 echo "pipeline result is : $currentBuild.result"
+                sh 'echo you  branch is : $env.BRANCH_NAME'
                 // sh "cd .. && rm -rf my-folder"
                 // sh "echo 'full --> $my_repo_cred'"
                 // sh "echo 'username --> $my_repo_cred_USR'"
