@@ -1,7 +1,15 @@
 stage('Build') {
     node {
-        checkout scm
         sh 'echo from build'
+        stage ('inner build')
+        {
+            checkout scm
+            sh 'echo from innner build'
+        }
+        stage ('inner test')
+        {
+            sh 'echo from inner test'
+        }
     }
 }
 
