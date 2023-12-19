@@ -1,5 +1,5 @@
-stage('Build') {
-    node {
+node {
+        stage('Build') {
         sh 'echo from build'
         stage ('inner build')
         {
@@ -13,8 +13,8 @@ stage('Build') {
     }
 }
 
-stage('Test') {
-    node('linux') {
+node {
+    stage('Test') {
         checkout scm
         try {
             sh 'echo from linux  check'
@@ -23,7 +23,8 @@ stage('Test') {
             sh 'echo end of finally'
         }
     }
-    node('windows') {
+}
+node {
         checkout scm
         try {
             bat 'echo from windows check'
@@ -32,5 +33,4 @@ stage('Test') {
             sh 'echo end of finally'
             
         }
-    }
 }
