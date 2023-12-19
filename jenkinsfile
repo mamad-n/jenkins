@@ -3,7 +3,8 @@ node {
 
         stage('Build') {
         sh 'echo from build'
-		sh 'echo you branch is -- ${env.BRANCH_NAME}'
+		sh 'echo you branch is -- $env.BRANCH_NAME'
+		sh 'echo you branch is -- $BRANCH_NAME'
 
         stage ('inner build'){
             sh 'echo from innner build : nemidonam'
