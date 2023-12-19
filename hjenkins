@@ -2,7 +2,6 @@ stage('Build') {
     node {
         checkout scm
         sh 'echo from build'
-        stash includes: '**/target/*.jar', name: 'app'
     }
 }
 
@@ -10,21 +9,20 @@ stage('Test') {
     node('linux') {
         checkout scm
         try {
-            unstash 'app'
             sh 'echo from linux  check'
         }
         finally {
-            junit '**/target/*.xml'
+            sh 'echo end of finally'
         }
     }
     node('windows') {
         checkout scm
         try {
-            unstash 'app'
             bat 'echo from windows check'
         }
         finally {
-            junit '**/target/*.xml'
+            sh 'echo end of finally'
+            
         }
     }
 }
