@@ -5,8 +5,7 @@ node {
         sh 'echo from build'
 
         stage ('inner build'){
-            checkout scm
-            sh 'echo from innner build'
+            sh 'echo from innner build ---------------> nemidonam'
         }
 
         stage ('inner test'){
