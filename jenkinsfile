@@ -1,6 +1,6 @@
 node {
 
-    docker.image('192.168.1.7:5000/alpine:3.18.4').inside{
+    docker.image('localhost:5000/alpine:3.18.4').inside{
   
 		checkout scm
 
