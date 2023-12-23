@@ -10,6 +10,10 @@ node {
 		sh 'echo you branch is -- $BRANCH_NAME'
         sh 'sleep 100'
         }
+
+    }
+    docker.image('localhost:5000/ubuntu:focal').inside {
+        checkout scm
         stage ('inner build'){
             sh 'echo from innner build : nemidonam'
         }
@@ -17,7 +21,6 @@ node {
         stage ('inner test'){
             sh 'echo from inner test'
         }
-
     }
 }
 
