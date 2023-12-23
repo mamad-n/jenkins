@@ -1,11 +1,15 @@
 node {
+
+    docker.image('192.168.1.7:5000/alpine:3.18.4').inside{
+  
 		checkout scm
 
         stage('Build') {
         sh 'echo from build'
 		sh 'echo you branch is -- $env.BRANCH_NAME'
 		sh 'echo you branch is -- $BRANCH_NAME'
-
+        sh 'sleep 100'
+        }
         stage ('inner build'){
             sh 'echo from innner build : nemidonam'
         }
@@ -13,6 +17,7 @@ node {
         stage ('inner test'){
             sh 'echo from inner test'
         }
+
     }
 }
 
