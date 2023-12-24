@@ -8,21 +8,23 @@ node {
             docker image push $my_image && \
             echo done ......... "
     }
-    docker.image('localhost:5000/nginx:alpine').withRun {
+    docker.image('localhost:5000/nginx:alpine').withRun ('--name myweb'){
+        docker.image('localhost:5000/nginx:alpine').withRun {
 
-        sh 'echo hello form with run .'
+            sh 'echo hello form with run .'
 
-        docker.image('localhost:5000/my-app-man:3.4').inside{
+            docker.image('localhost:5000/my-app-man:3.4').inside{
 
-            stage('Build') {
-            sh 'echo from build'
-            sh 'echo you branch is -- $env.BRANCH_NAME'
-            sh 'echo you branch is -- $BRANCH_NAME'
-            sh 'ls -lah'
-            sh 'pwd'
-            sh 'sleep 30'
+                stage('Build') {
+                sh 'echo from build'
+                sh 'echo you branch is -- $env.BRANCH_NAME'
+                sh 'echo you branch is -- $BRANCH_NAME'
+                sh 'ls -lah'
+                sh 'pwd'
+                sh 'sleep 30'
+                }
+
             }
-
         }
     }
 }
