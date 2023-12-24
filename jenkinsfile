@@ -8,7 +8,9 @@ node {
             docker image push $my_image && \
             echo done ......... "
     }
-    docker.image('localhost:5000/my-app-man:3.4').withRun {
+    docker.image('localhost:5000/nginx:alpine').withRun {
+
+        sh 'echo hello form with run .'
 
         docker.image('localhost:5000/my-app-man:3.4').inside{
 
@@ -21,18 +23,6 @@ node {
             sh 'sleep 30'
             }
 
-        }
-    }
-    docker.image('localhost:5000/ubuntu:focal').inside {
-        stage ('inner build'){
-            sh 'echo from innner build : nemidonam'
-            sh 'ls -lah'
-            sh 'pwd'
-            sh 'sleep 30'
-        }
-
-        stage ('inner test'){
-            sh 'echo from inner test'
         }
     }
 }
