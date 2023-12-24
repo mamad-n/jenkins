@@ -8,12 +8,13 @@ node {
             docker image push $my_image && \
             echo done ......... "
     }
-    docker.image('localhost:5000/nginx:alpine').withRun ('--name myweb'){
-        docker.image('localhost:5000/nginx:alpine').withRun {
+
+    docker.withRegistry('http://localhost:5000'){
+        docker.image('nginx:alpine').withRun {
 
             sh 'echo hello form with run .'
 
-            docker.image('localhost:5000/my-app-man:3.4').inside{
+            docker.image('my-app-man:3.4').inside{
 
                 stage('Build') {
                 sh 'echo from build'
