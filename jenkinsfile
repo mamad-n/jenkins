@@ -10,7 +10,7 @@ node {
     }
 
     docker.withRegistry('http://localhost:5000'){
-        docker.image('nginx:alpine').withRun {
+        docker.image('ngin:23.1').withRun {
 
             sh 'echo hello form with run .'
 
