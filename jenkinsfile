@@ -1,5 +1,6 @@
 node {
 
+    checkout scm
     stage ('build image') {
         def my_image
         my_image = 'localhost:5000/my-app-man:3.4'
@@ -7,22 +8,22 @@ node {
             docker image push $my_image && \
             echo done ......... "
     }
-    docker.image('localhost:5000/my-app-man:3.4').inside{
-  
-		checkout scm
+    docker.image('localhost:5000/my-app-man:3.4').withRun {
 
-        stage('Build') {
-        sh 'echo from build'
-		sh 'echo you branch is -- $env.BRANCH_NAME'
-		sh 'echo you branch is -- $BRANCH_NAME'
-        sh 'ls -lah'
-        sh 'pwd'
-        sh 'sleep 30'
+        docker.image('localhost:5000/my-app-man:3.4').inside{
+
+            stage('Build') {
+            sh 'echo from build'
+            sh 'echo you branch is -- $env.BRANCH_NAME'
+            sh 'echo you branch is -- $BRANCH_NAME'
+            sh 'ls -lah'
+            sh 'pwd'
+            sh 'sleep 30'
+            }
+
         }
-
     }
     docker.image('localhost:5000/ubuntu:focal').inside {
-        checkout scm
         stage ('inner build'){
             sh 'echo from innner build : nemidonam'
             sh 'ls -lah'
