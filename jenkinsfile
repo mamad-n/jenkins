@@ -1,7 +1,6 @@
 pipeline{
     agent any
-    def my_var
-    my_var = 'mamad hastam'
+    def my_var = 'mamad hastam'
     environment{
         my_repo_cred = credentials('registry_cred') 
         ssh_cred = credentials('ssh-key') 
