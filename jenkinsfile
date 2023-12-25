@@ -1,5 +1,7 @@
 pipeline{
     agent any
+    def my_var
+    my_var = 'mamad hastam'
     environment{
         my_repo_cred = credentials('registry_cred') 
         ssh_cred = credentials('ssh-key') 
@@ -18,6 +20,7 @@ pipeline{
                 sh "echo  your buil number is : ${env.BUILD_NUMBER}"
                 echo 'your name is : ${name}'
                 echo "your name is : ${name}"
+                echo "your name is : ${my_var}"
                 sh 'echo "your name is : ${name}"'
                 echo "pipeline result is : $currentBuild.result"
                 sh 'echo you  branch is : $env.BRANCH_NAME'
