@@ -17,12 +17,12 @@ pipeline {
                 }
             }
             stages {
-                steps {
-                    echo "Hello, nice to meet you."
+                stage{
+                    steps {
+                        echo "Hello, nice to meet you."
+                    }
                 }
-
             }
-
         }
     }
 }
