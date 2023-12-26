@@ -1,10 +1,12 @@
 pipeline{
     agent any
-    def my_var = 'mamad hastam'
     environment{
         my_repo_cred = credentials('registry_cred') 
         ssh_cred = credentials('ssh-key') 
         name = 'mamad'
+    }
+    options {
+        timestamps()
     }
     triggers {
         cron 'H */2 * * *'
