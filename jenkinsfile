@@ -21,7 +21,6 @@ pipeline{
                 sh "echo  your buil number is : ${env.BUILD_NUMBER}"
                 echo 'your name is : ${name}'
                 echo "your name is : ${name}"
-                echo "your name is : ${my_var}"
                 sh 'echo "your name is : ${name}"'
                 echo "pipeline result is : $currentBuild.result"
                 sh 'echo you  branch is : $env.BRANCH_NAME'
