@@ -16,13 +16,6 @@ pipeline {
                     }
                 }
             }
-            stages {
-                stage{
-                    steps {
-                        echo "Hello, nice to meet you."
-                    }
-                }
-            }
         }
     }
 }
