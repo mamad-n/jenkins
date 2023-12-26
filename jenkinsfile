@@ -4,15 +4,25 @@ pipeline {
     stages {
         stage ('test') {
 
-            when {
-                anyOf {
-                    branch 'main'
+            stages {
+                stage ('inner test 1'){
+                    steps {
+                        sh 'echo from inner test'
+                    }
+                }
+                stage ('inner test 2'){
+                    steps {
+                        sh 'echo from inner test'
+                    }
                 }
             }
+            stages {
+                steps {
+                    echo "Hello, nice to meet you."
+                }
 
-            steps {
-                echo "Hello, nice to meet you."
             }
+
         }
     }
 }
