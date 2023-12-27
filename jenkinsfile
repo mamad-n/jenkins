@@ -7,7 +7,7 @@ pipeline{
     }
     options {
         timestamps()
-        buildDiscarder(logRotator(numToKeepStr: '1'))
+        buildDiscarder(logRotator(numToKeepStr: '4'))
     }
     triggers {
         cron 'H */2 * * *'
