@@ -54,7 +54,7 @@ pipeline{
     post {
     always {
         // One or more steps need to be included within each condition's block.
-        archiveArtifacts artifacts: 'my-folder/*.tar , file1'
+        archiveArtifacts artifacts: 'my-folder/*.tar , file1' , fingerprint: true
     }
     }
 }
