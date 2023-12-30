@@ -14,7 +14,7 @@ node {
   } catch(e) {
 
     // send email
-      emailext(body: content,
+      emailext(body: 'this is my body',
          subject: 'my subject',
          to: 'atombax@gmail.com', attachLog: true )
 
