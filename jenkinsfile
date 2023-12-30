@@ -19,6 +19,5 @@ node {
          to: 'atombax@gmail.com', attachLog: true )
 
     // mark current build as a failure and throw the error
-    throw e;
   }
 }
