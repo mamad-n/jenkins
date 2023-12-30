@@ -16,7 +16,8 @@ node {
     // send email
       emailext(body: 'this is my body',
          subject: 'my subject',
-         to: '$DEFAULT_RECIPIENTS' , attachLog: true )
+         to: '$DEFAULT_RECIPIENTS' , attachLog: true,
+         from: 'xyz367@gmail.com' )
 
     // mark current build as a failure and throw the error
   }
