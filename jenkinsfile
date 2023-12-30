@@ -17,7 +17,7 @@ node {
       emailext(body: 'this is my body',
          subject: 'my subject',
          to: '$DEFAULT_RECIPIENTS' , attachLog: true,
-         from: 'admin of system' )
+         from: 'xyz367@gmail.com' )
 
     // mark current build as a failure and throw the error
   }
