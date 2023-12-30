@@ -13,11 +13,8 @@ node {
     }
   } catch(e) {
 
-    // send email
-      emailext(body: 'this is my body',
-         subject: 'my subject',
-         to: '$DEFAULT_RECIPIENTS' , attachLog: true,
-         from: 'xyz367@gmail.com' )
+    // send slack message
+    slackSend color: "good", message: "Message from Jenkins Pipeline -- in az tarafe mane"
 
     // mark current build as a failure and throw the error
   }
