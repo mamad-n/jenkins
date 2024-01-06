@@ -17,5 +17,6 @@ node {
     slackSend color: "good", message: "Message from Jenkins Pipeline -- in az tarafe mane"
 
     // mark current build as a failure and throw the error
+    throw e
   }
 }
